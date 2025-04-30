@@ -1,0 +1,145 @@
+:root {
+  --main-font: "Roboto Condensed", sans-serif;
+  --second-font: "Baloo 2", sans-serif;
+  --flag-design: radial-gradient(
+      circle at 50%,
+      #f6b40e,
+      #f6b40e 15%,
+      transparent 15%
+    ),
+    linear-gradient(
+      #74acdf,
+      #74acdf 33.3%,
+      #fff 33.3%,
+      #fff 66.6%,
+      #74acdf 66.6%,
+      #74acdf 100%
+    );
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e6e9f8;
+  color: #333;
+  font-size: 16px;
+  font-family: var(--main-font);
+  text-align: center;
+}
+
+.title {
+  font-size: 50px;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-top: 30px;
+  background: linear-gradient(
+    #74acdf,
+    #74acdf 33.3%,
+    #fff 33.3%,
+    #fff 66.6%,
+    #74acdf 66.6%,
+    #74acdf 100%
+  );
+}
+
+.team-stats {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.team-stats p {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.team-stats span {
+  font-weight: bold;
+}
+
+label {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+option {
+  font-weight: 400;
+  color: #333333aa;
+}
+
+select {
+  border: 2px solid #33333333;
+  border-radius: 4px;
+  background-color: white;
+  font-family: var(--main-font);
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+select:focus {
+  outline: none;
+  border: 2px solid #4f70b8;
+}
+
+#player-cards {
+  max-width: 1200px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  justify-content: center;
+  justify-items: center;
+  gap: 20px;
+}
+
+.player-card {
+  padding: 10px;
+  width: 280px;
+  background-color: #74acdf;
+  border: 4px dashed #333;
+  position: relative;
+  border-radius: 20px 5px 20px 20px;
+  overflow: hidden;
+  box-shadow: 0 0 6px 0 #000000aa;
+  background: radial-gradient(ellipse at top, #5d4596, #5d459655),
+    radial-gradient(ellipse at bottom, #4fb8ac, #4fb8ac55);
+  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.player-card img {
+  max-width: 260px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.player-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 32px;
+  background: var(--flag-design);
+  z-index: 1;
+  border: 2px solid white;
+  filter: opacity(0.8);
+}
+
+.player-card h2,
+p {
+  position: relative;
+  z-index: 2;
+}
+
+.player-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px 0 #000000dd;
+}
